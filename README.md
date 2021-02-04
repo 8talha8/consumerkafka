@@ -1,1 +1,3 @@
 # Got to  [https://github.com/8talha8/ProducerKafka](https://github.com/8talha8/ProducerKafka)  for Instruction
+- there is one controller all with GET methods to hit the producer. It has nothing to do with Kafka.
+- There is a service that actually listen to the producerKafka Topic when ever you hit http://localhost:8081/hit/2, http://localhost:8081/hit/22, http://localhost:8081/hit/7 , http://localhost:8081/hit/77. This service receives the serialized Object then consumes it after deserializing.  
