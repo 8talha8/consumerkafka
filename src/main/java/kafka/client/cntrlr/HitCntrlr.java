@@ -37,7 +37,7 @@ public class HitCntrlr {
 
 	@PostConstruct
 	public void init() {
-		apiClient.setBasePath("http://localhost:8080");
+		apiClient.setBasePath("http://localhost:8082");
 		i = 0L;
 		j=0L;
 	}
@@ -53,6 +53,11 @@ public class HitCntrlr {
 	public ResponseEntity<List<Department>> getAllDep() {
 		return departmentCntrlrApi.getAllUsingGETWithHttpInfo();
 	}
+	@GetMapping("/22")
+	public ResponseEntity<Department> find() throws RestClientException, IOException {
+		List<Department> department = departmentCntrlrApi.getAllUsingGET();
+		return departmentCntrlrApi.findUsingGETWithHttpInfo(department.get(0).getId());
+	}
 
 	@GetMapping("/3")
 	public ResponseEntity<Status> updateDep() throws RestClientException, IOException {
@@ -61,6 +66,7 @@ public class HitCntrlr {
 		departmentToUpdate.setName(departmentToUpdate.getName() + "." + i);
 		return departmentCntrlrApi.updateUsingPUTWithHttpInfo(departmentToUpdate);
 	}
+	
 
 	@GetMapping("/4")
 	public ResponseEntity<Status> deleteDep() throws RestClientException, IOException {
@@ -80,6 +86,11 @@ public class HitCntrlr {
 	@GetMapping("/7")
 	public ResponseEntity<List<Employee>> getAllEmp() {
 		return employeeCntrlrApi.getAllUsingGET1WithHttpInfo();
+	}
+	@GetMapping("/77")
+	public ResponseEntity<Employee> findEmp() throws RestClientException, IOException {
+		List<Employee> employee = employeeCntrlrApi.getAllUsingGET1();
+		return employeeCntrlrApi.findUsingGET1WithHttpInfo(employee.get(0).getEmpId());
 	}
 
 	@GetMapping("/8")
