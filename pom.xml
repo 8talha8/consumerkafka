@@ -113,7 +113,7 @@
 							<!-- <language>spring</language> -->
 							<language>java</language>
 							<library>resttemplate</library>
-							<modelPackage>${project.groupId}.swagger.model</modelPackage>
+							<modelPackage>kafka.demo.model</modelPackage>
 							<apiPackage>${project.groupId}.swagger.api</apiPackage>
 							<invokerPackage>${project.groupId}.swagger.invoker
 							</invokerPackage>

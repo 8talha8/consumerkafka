@@ -17,9 +17,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import kafka.client.swagger.api.DepartmentCntrlrApi;
 import kafka.client.swagger.api.EmployeeCntrlrApi;
 import kafka.client.swagger.invoker.ApiClient;
-import kafka.client.swagger.model.Department;
-import kafka.client.swagger.model.Employee;
-import kafka.client.swagger.model.Status;
+import kafka.demo.model.Department;
+import kafka.demo.model.Employee;
+import kafka.demo.model.Status;
+
 
 @RestController
 @RequestMapping("/hit")
