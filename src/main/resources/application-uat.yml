@@ -1,6 +1,6 @@
 logging:
     level:
-        kafka: INFO
+        kafka: DEBUG
         org:
             springframework: DEBUG
 server:

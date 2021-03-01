@@ -22,6 +22,7 @@ import kafka.demo.model.Employee;
 import kafka.demo.model.Status;
 
 
+
 @RestController
 @RequestMapping("/hit")
 public class HitCntrlr {
@@ -106,6 +107,11 @@ public class HitCntrlr {
 	public ResponseEntity<Status> deleteEmp() throws RestClientException, IOException {
 		List<Employee> employee = employeeCntrlrApi.getAllUsingGET1();
 		return employeeCntrlrApi.deleteUsingDELETE1WithHttpInfo(employee.get(0).getEmpId());
+	}
+	
+	@GetMapping("/10")
+	public ResponseEntity<Status> batch() throws RestClientException, IOException {
+		return departmentCntrlrApi.batchUsingGETWithHttpInfo();
 	}
 
 }
